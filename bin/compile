@@ -125,6 +125,10 @@ fi
 echo "Launching PHP FPM"
 /app/php/sbin/php-fpm -y /app/php/etc/php-fpm.conf -c /app/php/php.ini
 
+php/bin/pear install Mail
+php/bin/pear install Mail_Mime
+php/bin/pear install Net_SMTP
+
 echo "Launching apache"
 exec /app/apache/bin/httpd -DNO_DETACH
 EOF
